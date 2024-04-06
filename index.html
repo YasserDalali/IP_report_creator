@@ -57,28 +57,46 @@
                 IPreport.class = 'Unknown';
             }
 
-/* ---------------------- COLLECTING HOST/machine-ID */
-            switch (true) {
-              case IPreport.class === "A":
-              IPreport.idhost = IPparts[0]
-              IPreport.idmachine = `${IPparts[1]}.${IPparts[2]}.${IPparts[3]}`
-              break;
+/* ---------------------- COLLECTING HOST/machine-ID and Mask*/
+                switch (IPreport.class) {
+                  case "A":
+                    IPreport.idhost = IPparts[0];
+                    IPreport.idmachine = `${IPparts[1]}.${IPparts[2]}.${IPparts[3]}`;
+                    IPreport.defaultmask = '255.0.0.0';
+                    IPreport.reserved = '10.0.0.0';
+                    IPreport.broadcast = '10.255.255.255';
+                    break;
 
-              case IPreport.class === "B":
-              IPreport.idhost = `${IPparts[0]}.${IPparts[1]}`
-              IPreport.idmachine = `${IPparts[1]}.${IPparts[2]}.${IPparts[3]}`
-              break;
+                  case "B":
+                    IPreport.idhost = `${IPparts[0]}.${IPparts[1]}`;
+                    IPreport.idmachine = `${IPparts[2]}.${IPparts[3]}`;
+                    IPreport.defaultmask = '255.255.0.0';
+                    IPreport.reserved = '172.16.0.0';
+                    IPreport.broadcast = '172.31.255.255';
+                    break;
 
-              case IPreport.class === "C":
-              IPreport.idhost = `${IPparts[0]}.${IPparts[1]}.${IPparts[2]}`
-              IPreport.idmachine = `${IPparts[3]}`
-              break;
+                  case "C":
+                    IPreport.idhost = `${IPparts[0]}.${IPparts[1]}.${IPparts[2]}`;
+                    IPreport.idmachine = IPparts[3];
+                    IPreport.defaultmask = '255.255.255.0';
+                    IPreport.reserved = '192.168.0.0';
+                    IPreport.broadcast = '192.168.255.255';
+                    break;
 
-              case IPreport.class === "D" || IPreport.class === "E":
-              IPreport.idhost = `${IPparts[0]}.${IPparts[1]}.${IPparts[2]}.${IPparts[3]}`
-              IPreport.idmachine = `None (TYPE D/E)`
-              break;
-            }
+                  case "D":
+                  case "E":
+                    IPreport.idhost = `${IPparts[0]}.${IPparts[1]}.${IPparts[2]}.${IPparts[3]}`;
+                    IPreport.idmachine = 'None (TYPE D/E)';
+                    IPreport.defaultmask = 'N/A (TYPE D/E)';
+                    IPreport.reserved = '224.0.0.0 / 240.0.0.0 (Multicast/Reserved)';
+                    IPreport.broadcast = '239.255.255.255 / 255.255.255.255 (Multicast/Reserved)';
+                    break;
+
+                  default:
+                    // Handle unknown class
+                    break;
+                }
+
           }
         }
       console.log(IPreport)
