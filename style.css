@@ -50,3 +50,8 @@ body {
     padding: 10px;
     box-sizing: border-box;
   }
+
+  .fas {
+    margin-right: 1rem;
+    opacity: 0.4;
+  }

@@ -15,7 +15,7 @@
 /* ---------------------- CHECKING IP CLASS VALIDITY */
 
           console.log(IPparts)
-          if (Number(IPparts[0]) < 10 || Number(IPparts[0]) > 255) { alert("Invalid Ip4v Adress") }
+          if (Number(IPparts[0]) < 10 || Number(IPparts[0]) > 255 || reGexIP.test(IP) != true) { alert("Invalid Ip4v Adress") }
 
           else {
 /* ---------------------- CHECKING IP CLASS TYPE */
@@ -100,10 +100,15 @@
 
                   else if (IPreport.reserved == IPreport.ip) {
                     document.getElementById('Rtype').textContent = "Reserved"
+                    document.getElementById('Rmid').textContent = "";
+
                   }
 
                   else if (IPreport.broadcast == IPreport.ip) {
                     document.getElementById('Rtype').textContent = "Broadcast"
+                    document.getElementById('Rmid').textContent = "";
+
+
                   }
                 }
 
