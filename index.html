@@ -11,11 +11,43 @@
   </head>
   <body>
       <label  for="">IP Adress:</label>
-    <input id="IP" type="text" name="" id="">
+    <input id="IP" class="form form-input" type="text" name="" id="">
 
     <input type="button" value="Generate report" class="btn btn-success">
 
+    <div class="report" style="width: max-content; border: 1px solid black; border-radius: 10px; padding: 3rem; margin-top: 5rem;">
 
+      <style>
+        .report p {font-weight: bolder;}
+        .report p span {font-weight: normal;}
+
+      </style>
+
+      <p>IP: <span id="Rip"></span></p>
+
+      <p>IP Class: <span id="Rclass"></span></p>
+      </span>
+
+
+      <p>IP Host ID: <span id="Rhid"></span> </p>
+      
+
+      <p>IP Machine ID: <span id="Rmid"></span> </p>
+      
+
+      <p>IP Default Mask: <span id="Rmask"></span> </p>
+      
+
+      <p>IP Reserved ID: <span id="Rreserved"></span></p>
+       
+
+      <p>IP BroadCast ID: <span id="Rbroadcast"></span> </p>
+      
+
+      <p>IP Range: <span id="Rrange"></span></p>
+      
+
+    </div>
 <script src="main.js">
 
 </script>

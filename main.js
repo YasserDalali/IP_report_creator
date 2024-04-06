@@ -1,4 +1,4 @@
-      const reGexIP = /\b\d{3}\.\d{3}\.\d{1,3}\.\d{1,3}\b/
+      const reGexIP = /\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/
 
 
       document.querySelector('.btn').addEventListener('click', () => {
@@ -78,14 +78,46 @@
                     IPreport.range = 'N/A'
                     break;
                 }
+/* ---------------------- CREATING AND VISUALISING REPORT*/
 
                 if (IPreport.class != "Unknown") {
-
+                  document.getElementById('Rip').textContent = IPreport.ip;
+                  document.getElementById('Rclass').textContent = IPreport.class;
+                  document.getElementById('Rhid').textContent = IPreport.idhost;
+                  document.getElementById('Rmid').textContent = IPreport.idmachine;
+                  document.getElementById('Rmask').textContent = IPreport.defaultmask;
+                  document.getElementById('Rreserved').textContent = IPreport.reserved;
+                  document.getElementById('Rbroadcast').textContent = IPreport.broadcast;
+                  document.getElementById('Rrange').textContent = IPreport.range;
                 }
+
+
+
           }
+
         }
 
-/* ---------------------- CREATING AND VISUALISING REPORT*/
+        else {
+          const INVALIDERROR = 'Invalid IP4v address.';
+          document.getElementById('Rip').textContent = INVALIDERROR;
+          document.getElementById('Rip').style.color = 'red';
+          document.getElementById('Rclass').textContent = INVALIDERROR;
+          document.getElementById('Rclass').style.color = 'red';
+          document.getElementById('Rhid').textContent = INVALIDERROR;
+          document.getElementById('Rhid').style.color = 'red';
+          document.getElementById('Rmid').textContent = INVALIDERROR;
+          document.getElementById('Rmid').style.color = 'red';
+          document.getElementById('Rmask').textContent = INVALIDERROR;
+          document.getElementById('Rmask').style.color = 'red';
+          document.getElementById('Rreserved').textContent = INVALIDERROR;
+          document.getElementById('Rreserved').style.color = 'red';
+          document.getElementById('Rbroadcast').textContent = INVALIDERROR;
+          document.getElementById('Rbroadcast').style.color = 'red';
+          document.getElementById('Rrange').textContent = INVALIDERROR;
+          document.getElementById('Rrange').style.color = 'red';
+        }
+        
+
 
       console.log(IPreport)
       })
