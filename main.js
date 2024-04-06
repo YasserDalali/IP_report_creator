@@ -2,6 +2,13 @@
 
 
       document.querySelector('.btn').addEventListener('click', () => {
+        document.querySelector('.report').style.display = 'block'
+        
+        document.querySelectorAll('span').forEach(element => {
+          element.style.color = 'black';
+        });
+
+        
         let IPreport = { ip: '', class: '' }
 
 
