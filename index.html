@@ -8,8 +8,74 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f8f9fa;
+      }
+
+      ul {list-style: none; display: flex; justify-content: center;}
+      ul li {margin: 1rem 1rem; color: #838383;}
+
+      .report {
+        min-width: 50%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      @media screen and (max-width: 561px) {
+        .report {min-width: 90%;}
+        
+      }
+    
+      .report p {
+        margin: 10px 0;
+        font-weight: bold;
+      }
+    
+      .report p span {
+        font-weight: normal;
+        margin-left: 10px;
+        color: #333;
+      }
+    
+      .btn {
+        margin-top: 20px;
+      }
+    
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+    </style>
+
+
   </head>
   <body>
+
+    <ul>
+      <li><b>Test IPs:</b></li>
+
+      <li>192.168.1.1</li>
+      <li>10.0.0.1</li>
+      <li>172.16.0.1</li>
+      <li>255.255.255.255</li>
+      <li>127.0.0.1</li>
+      <li>256.0.0.1</li>
+      <li>192.168.1</li>
+      <li>192.168.1.256</li>
+      <li>192.168.1.1.1</li>
+    </ul>
+    
+
       <label  for="">IP Adress:</label>
     <input id="IP" class="form form-input" type="text" name="" id="">
 
@@ -17,11 +83,7 @@
 
     <div class="report" style="width: max-content; border: 1px solid black; border-radius: 10px; padding: 3rem; margin-top: 5rem;">
 
-      <style>
-        .report p {font-weight: bolder;}
-        .report p span {font-weight: normal;}
 
-      </style>
 
       <p>IP: <span id="Rip"></span></p>
 
