@@ -89,6 +89,22 @@
                   document.getElementById('Rreserved').textContent = IPreport.reserved;
                   document.getElementById('Rbroadcast').textContent = IPreport.broadcast;
                   document.getElementById('Rrange').textContent = IPreport.range;
+
+
+                  /* special type */
+
+                  if (IPreport.reserved != IPreport.ip && IPreport.broadcast != IPreport.ip) {
+                    document.getElementById('Rtype').textContent = "Machine";
+
+                  }
+
+                  else if (IPreport.reserved == IPreport.ip) {
+                    document.getElementById('Rtype').textContent = "Reserved"
+                  }
+
+                  else if (IPreport.broadcast == IPreport.ip) {
+                    document.getElementById('Rtype').textContent = "Broadcast"
+                  }
                 }
 
 
